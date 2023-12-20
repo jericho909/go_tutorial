@@ -22,6 +22,16 @@ func main() {
 		fmt.Printf("The result of the division is %v with remainder %v", result, remainder)
 	}
 
+	var powerOfTwo = powerOfTwo(num3)
+	switch {
+	case powerOfTwo%2 == 0:
+		fmt.Printf("\nThe power of two of %v is %v and is divisible by two", num3, powerOfTwo)
+	case powerOfTwo%2 != 0:
+		fmt.Printf("The power of two of %v is %v and is not divisible by two", num3, powerOfTwo)
+	default:
+		fmt.Printf("Unknown error")
+	}
+
 }
 
 func printMe(printValue string) {
@@ -42,4 +52,8 @@ func intDivisionWithRemainder(num int, denum int) (int, int, error) {
 	var result int = num / denum
 	var remainder int = num % denum
 	return result, remainder, err
+}
+
+func powerOfTwo(num int) int {
+	return num * num
 }
